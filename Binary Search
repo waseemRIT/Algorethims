@@ -1,0 +1,19 @@
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+    midpoint = (left + right) // 2
+    print(arr)
+    if len(arr) == 0:
+        return -1
+    if arr[midpoint] == target:
+        return midpoint
+    if target > arr[midpoint]:
+        t = binary_search(arr[midpoint + 1:], target)
+        if t == -1:
+            return -1
+        return midpoint + 1 + t
+    if target < arr[midpoint]:
+        return binary_search(arr[:midpoint], target)
+
+
+print(binary_search([1, 2, 3, 4], 3)
