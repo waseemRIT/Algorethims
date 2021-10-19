@@ -1,0 +1,19 @@
+def swap(an_array, a, b):
+    temp = an_array[b]
+    an_array[b] = an_array[a]
+    an_array[a] = temp
+    return an_array
+
+
+def shift(an_array, n):
+    while n > 0:
+        if an_array[n] < an_array[n - 1]:
+            swap(an_array, n, n - 1)
+        n = n - 1
+    return an_array
+
+
+def insertion_sort(arr):
+    for element in range(len(arr)):
+        shift(arr, element)
+    return arr
