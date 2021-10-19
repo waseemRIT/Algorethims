@@ -1,4 +1,5 @@
 def swap(an_array, a, b):
+    """ Use this function to swap between indexes"""
     temp = an_array[b]
     an_array[b] = an_array[a]
     an_array[a] = temp
